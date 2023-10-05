@@ -1,0 +1,21 @@
+.body {
+    display:flex;
+}
+
+.letters {
+    width:187px;
+    height:579px;
+    color:#358933;
+    font-size:128px;
+}
+
+footer,
+.footer  {
+    display:flex;
+    margin:0;
+}
+
+
+
+
+
