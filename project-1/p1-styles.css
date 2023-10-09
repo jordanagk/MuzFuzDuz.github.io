@@ -1,71 +1,125 @@
 /* This needs to be present to correct issues with the large margins automatically created by the browser window. */
-h1,h2,h3,h4,h5,h6,p{
-    margin:0;
-    padding:0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+    font-weight: 100;
 }
 
-body{
+/* this is a html element selector and is different than a class selector. */
+body {
     font-family: 'Black Ops One', cursive;
     background-color: #f5e1ca;
-    
+    /* font-weight 100 is needed to be able to see the stencil lines in your font. */
+    font-weight: 100;
 }
 
-.container{
+.container {
     width: 938px;
     margin: 0 auto;
 }
 
 
-.letterform-character{
+.letterform-character {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
-    margin:0;
-    padding:0;
-}
-.letterform-character h1{
-    /* margin-top:-100px; */
-    font-size:500px;
-    color: #1D621C;
-    padding:0;
+    margin: 0;
+    padding: 0;
+    /* need position:relative in order to absolutely position the #letter-analysis */
+    position:relative;
+    /* the vertical spacing between the letterform character and other content is really large due to the font-size:500px on the h1. To counteract that we use negative margin-top and bottom.  */
+    margin-top: -100px;
+    margin-bottom: -100px;
 }
 
-.letterform-character h2{
+#letter-analysis {
+    /* need position:absolute in order to absolutely position the #letter-analysis off of the parent container — div.letterform-character */
+    position: absolute;
+    width: 36.75%;
+    top: 126px;
+    left: 39px;
+}
+
+.letterform-character h1 {
+    font-size: 500px;
+    color: #1D621C;
+    padding: 0;
+}
+
+.letterform-character h2 {
     font-size: 100px;
     /* overflow-wrap: ; */
     /* display:flex; */
 }
 
-#button{
+
+
+#button {
     Height: 60px;
     width: 60px;
 }
-#button:hover{
-    cursor:pointer;
+
+#button:hover {
+    cursor: pointer;
 }
 
-.letters{
+/*&&&&&&&&&&&&&&&&&&&&&&&&&&&& ROW 2 &&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+
+/* this is a class selector and we know this because of the period before the name. This will control the section class="body" in your html. */
+.body {
+    /* in order to get the div.letters and .body-col to sit side by side we need to use display:flex */
+    display: flex;
+    /* the width of this element is the same as its parent element. The parent element to section.body is div.container. By making it width:100% we are ensuring that it fills the full space allowed */
+    width: 100%;
+    /* we need to use justify-content:space-between in order to get the div.letters and .body-col to have a gutter space between them. */
+    justify-content: space-between;
+}
+
+.letters {
     width: 187px;
-    height:579px;
+    height: 579px;
     font-size: 128px;
-    overflow: hidden;
+    /* font-weight 100 is needed in order for the stencil lines to show up on your letterforms. */
+    font-weight: 100;
+    /* this is needed in order to allow the letter set to be scrollable */
+    overflow-y: scroll;
 }
 
-.letters{
-    /* writing-mode: vertical-lr; */
-    /* text-orientation: upright; */
+.body-col {
+    /* 938 px is width of the div.container. div.letters is 187px wide which means we have a remaining 751px to work with. We to save some of that space for our column gutter. By going with 721 px for .body-col we will have 30px gutter between the two columns. */
+    width: 721px;
+}
+
+.body-col p {
+    font-size:28px;
+}
+
+.person-title h1,
+.person-title h2 {
+    margin:0;
+    font-size:34px;
+}
+
+h4 {
+    font-size:16px;
 }
 
 
-.footer{
+.footer {
     /* font-size: 20; */
-    font-family: 'Black Ops One', cursive;
-    margin: ;
-    width: ;
+    margin: 0;
+    width: 0;
 }
 
-.footer{
-    /* display: flex; */
-    /* Margin: 25%;
-    font-size: 20; */
+#headshot {
+    /* this will make your photo be a circle instead of a square. */
+    border-radius:50%;
+    width:245px;
+    height:245px;
+    text-align:center;
 }
